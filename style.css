@@ -7,11 +7,26 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(to right, #16222A, #3A6073); /* Updated gradient */
   color: white;
   line-height: 1.6;
   overflow-x: hidden;
   height: 100%; /* Ensure body takes full height */
+  background: linear-gradient(-45deg, #16222A, #3A6073, #4a90e2, #f7c9e5); /* Diagonal gradient */
+  background-size: 400% 400%; /* Increase the size of the gradient for animation */
+  animation: gradientShift 10s ease infinite; /* Animation for sliding effect */
+}
+
+/* Keyframe for sliding background */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Navbar */
@@ -98,7 +113,9 @@ body {
   text-align: center;
   height: calc(100vh - 70px); /* Adjust the height to take the full viewport height minus navbar */
   padding: 20px;
-  background: linear-gradient(to right, #16222A, #3A6073); /* Updated gradient */
+  background: linear-gradient(-45deg, #16222A, #3A6073, #4a90e2, #f7c9e5); /* Diagonal gradient */
+  background-size: 400% 400%; /* Increase the size of the gradient for animation */
+  animation: gradientShift 10s ease infinite; /* Animation for sliding effect */
   color: white;
 }
 
