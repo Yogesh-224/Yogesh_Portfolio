@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Education</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Education Page Specific Styles */
+      .education-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: linear-gradient(to right, #16222a, #3a6073);
+        color: white;
+        text-align: center;
+        padding-top: 120px; /* Increased padding to ensure space for navbar */
+      }
+
+      .education-section h1 {
+        font-size: 50px;
+        margin-bottom: 20px;
+      }
+
+      .education-section .education-list {
+        max-width: 1000px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .education-item {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        width: 80%;
+        text-align: left;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .education-item h3 {
+        font-size: 22px;
+        margin-bottom: 10px;
+        color: #f39c12;
+      }
+
+      .education-item p {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .education-item .year {
+        font-size: 16px;
+        color: #b3b3b3;
+      }
+
+      /* Remove Social Links and Footer Effect */
+      .social-links {
+        display: none; /* Hide social links section from this page */
+      }
+
+      /* Navbar */
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.9);
+        z-index: 999;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 10px 20px;
+        height: 70px; /* Fixed height for navbar */
+      }
+
+      .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: black;
+      }
+
+      .logo span {
+        color: red;
+      }
+
+      .nav-menu ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-menu ul li a {
+        text-decoration: none;
+        color: black;
+        padding: 8px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .nav-menu ul li a.active,
+      .nav-menu ul li a:hover {
+        background-color: red;
+        color: white;
+      }
+
+      /* Navbar Mobile Toggle */
+      .navbar .menu-toggle {
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        .navbar .menu-toggle {
+          display: block;
+          font-size: 24px;
+          cursor: pointer;
+        }
+
+        .navbar .nav-menu ul {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 60px;
+          right: 10px;
+          background-color: white;
+          padding: 10px;
+          border-radius: 5px;
+        }
+
+        .navbar .nav-menu ul.active {
+          display: flex;
+        }
+      }
+
+      /* Mobile Responsiveness */
+      @media (max-width: 768px) {
+        .education-section h1 {
+          font-size: 40px;
+        }
+
+        .education-item {
+          width: 90%;
+        }
+
+        .education-item h3 {
+          font-size: 20px;
+        }
+
+        .education-item p {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container">
+        <div class="logo">Portfolio<span>.</span></div>
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="menu-toggle">
+          <i class="fas fa-bars" style="color:black;"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- Education Section -->
+    <section class="education-section">
+      <h1>My Education</h1>
+      <div class="education-list">
+        
+        <!-- Education Item 2 -->
+        <div class="education-item">
+          <h3>Full Stack Web Development Bootcamp</h3>
+          <p>W-Tech IT Solutions, 2024</p>
+          <p>
+            Intensive training program that covered front-end and back-end web
+            development. Developed several projects using HTML, CSS, JavaScript, PHP, MY SQL etc.
+          </p>
+          <span class="year">Completed in 2024</span>
+        </div>
+
+        <!-- Education Item 1 -->
+        <div class="education-item">
+          <h3>Bachelor Of Arts</h3>
+          <p>Delhi University, 2019 - 2022</p>
+          <p>
+            Completed a comprehensive undergraduate program with a focus on a broad range of subjects.
+            Developed strong communication and corporate skills through coursework, projects, and internships.
+            Gained practical experience through by working in the operations department of an organization, where I contributed to streamlining processes and improving efficiency. 
+          </p>
+          <span class="year">Graduated in 2022</span>
+        </div>
+
+
+        <!-- Education Item 3 -->
+        <div class="education-item">
+          <h3>Schooling</h3>
+          <p>CBSE Board</p>
+          <p>
+            Completed Secondary School Certificate and Higher Secondary Certificate with first divison
+          </p>
+          <span class="year">Completed in 2019</span>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
