@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* General Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Arial', sans-serif;
+        color: white;
+        line-height: 1.6;
+        overflow-x: hidden;
+        height: 100%;
+        background: linear-gradient(-45deg, #742d05, #2f4048, #0e233a, #650414);
+        background-size: 400% 400%;
+        animation: gradientShift 10s ease infinite;
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Navbar */
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.9);
+        z-index: 999;
+        padding: 10px 20px;
+        height: 70px;
+      }
+
+      .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: black;
+      }
+
+      .logo span {
+        color: red;
+      }
+
+      .nav-menu ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-menu ul li a {
+        text-decoration: none;
+        color: black;
+        padding: 8px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .nav-menu ul li a.active,
+      .nav-menu ul li a:hover {
+        background-color: red;
+        color: white;
+      }
+
+      /* Hire Me Section */
+      .hire-me {
+        padding: 50px 20px;
+        
+        color: white;
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      .hire-me .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        animation: fade-in 1s ease-out forwards;
+      }
+
+      .description {
+        font-size: 18px;
+        margin-bottom: 30px;
+        animation: fade-in 1.5s ease-out forwards;
+      }
+
+      .services {
+        margin-bottom: 40px;
+      }
+
+      .services h3 {
+        font-size: 28px;
+        margin-bottom: 15px;
+        color: red;
+      }
+
+      .services ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .services ul li {
+        font-size: 18px;
+        margin: 10px 0;
+      }
+
+      .cta-buttons {
+        margin-bottom: 30px;
+      }
+
+      .cta-buttons .btn {
+        display: inline-block;
+        margin: 10px;
+        padding: 12px 25px;
+        border: none;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .cta-buttons .btn.hire {
+        background-color: red;
+        color: white;
+      }
+
+      .cta-buttons .btn.view-portfolio {
+        background-color: #1a1a1a;
+        color: white;
+      }
+
+      .cta-buttons .btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Modal for Contact Number */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7); /* Dark background */
+        padding-top: 60px;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+
+      .modal-content {
+        background-color: #2f4048;
+        color: white;
+        margin: 5% auto;
+        padding: 20px;
+        border-radius: 10px;
+        width: 80%;
+        max-width: 400px;
+        text-align: center;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        position: relative;
+      }
+
+      .close {
+        color: #aaa;
+        font-size: 28px;
+        font-weight: bold;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        cursor: pointer;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      /* Keyframe for fade-in */
+      @keyframes fade-in {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Fade-in effect for modal */
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hire-me .container {
+          padding: 10px;
+        }
+
+        .section-title {
+          font-size: 30px;
+        }
+
+        .services h3 {
+          font-size: 24px;
+        }
+
+        .cta-buttons .btn {
+          padding: 10px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="navbar">
+      <div class="container">
+        <div class="logo">Portfolio<span>.</span></div>
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hire Me Section -->
+    <section id="hire-me" class="hire-me">
+      <div class="container">
+        <h2 class="section-title fade-in">Hire Me</h2>
+        <p class="description fade-in">
+          I am passionate about web development and always looking for new opportunities. Whether you need a professional website or a custom web solution, I can help you create it.
+        </p>
+        <div class="services fade-in">
+          <h3>Services I Offer</h3>
+          <ul>
+            <li>Responsive Web Design</li>
+            <li>Front-End Development (HTML, CSS, JavaScript)</li>
+            <li>Back-End Development (PHP, MySQL)</li>
+            <li>Website Maintenance & Updates</li>
+          </ul>
+        </div>
+        <div class="cta-buttons">
+          <a href="#" class="btn hire" onclick="openContactModal()">Contact Me</a>
+          <a href="project.html" class="btn view-portfolio">View Portfolio</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal for Contact Number -->
+    <div id="contact-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeContactModal()">&times;</span>
+        <h3>Contact Me</h3>
+        <p>You can reach me at:</p>
+        <p><strong>+1 (123) 456-7890</strong></p>
+        <p>Feel free to call or send a message!</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
