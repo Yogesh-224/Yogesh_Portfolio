@@ -6,12 +6,18 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   color: white;
-  line-height: 1.6;
+  /* line-height: 1.6;
   overflow-x: hidden;
-  height: 100%; /* Ensure body takes full height */
-  background: linear-gradient(-45deg, #742d05, #2f4048, #0e233a, #650414); /* Diagonal gradient */
+  height: 100%; Ensure body takes full height */
+  background: linear-gradient(
+    -45deg,
+    #742d05,
+    #171c1f,
+    #0e233a,
+    #650414
+  ); /* Diagonal gradient */
   background-size: 400% 400%; /* Increase the size of the gradient for animation */
   animation: gradientShift 10s ease infinite; /* Animation for sliding effect */
 }
@@ -31,11 +37,8 @@ body {
 
 /* Navbar */
 .navbar {
-  position: fixed;
-  top: 0;
   width: 100%;
   background: rgba(255, 255, 255, 0.9);
-  z-index: 999;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
   height: 70px; /* Fixed height for navbar */
@@ -111,9 +114,9 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: calc(100vh - 70px); /* Adjust the height to take the full viewport height minus navbar */
+
   padding: 20px;
-  background: linear-gradient(-45deg, #742d05, #2f4048, #0e233a, #650414); /* Diagonal gradient */
+
   background-size: 400% 400%; /* Increase the size of the gradient for animation */
   animation: gradientShift 10s ease infinite; /* Animation for sliding effect */
   color: white;
@@ -174,7 +177,8 @@ h1 {
 }
 
 .role {
-  color: white;
+  color: black;
+  font-weight: bolder;
   padding: 10px 20px; /* Adjust padding to reduce button length */
   border-radius: 15px;
   display: inline-block;
@@ -182,13 +186,20 @@ h1 {
   animation: fade-in 1s ease-out forwards;
   white-space: nowrap; /* Prevent text from wrapping */
   font-size: 18px; /* Adjust font size */
+  border: 2px solid white;
+  width: 200px;
+  text-align: center;
+  background-color: gainsboro;
+  margin-top: 20px;
 }
 
 .objective {
   padding: 15px 20px; /* Increased padding */
-  font-size: 18px;
-  line-height: 1.5;
+  font-size: 19px;
+  line-height: 2;
   animation: fade-in 1s ease-out forwards;
+  font-weight: normal;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .cta-buttons .btn {
@@ -237,8 +248,9 @@ h1 {
 /* Social Links */
 .social-links {
   display: flex;
-  justify-content: center;
+  padding: 1.5rem;
   align-items: center;
+  justify-content: flex-start;
 }
 
 .social-links a {
@@ -250,15 +262,28 @@ h1 {
 
 .coneect-me {
   font-size: 18px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   padding: 10px;
 }
 
-.social-links a:hover {
-  color: black; /* Change color on hover */
+
+.fa-linkedin:hover {
+  color: #0077B5;
   transform: scale(1.1); /* Slightly increase the size of the icon */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a shadow on hover */
 }
+.fa-whatsapp:hover{
+  color:#25D366;
+  transform: scale(1.1);
+}
+.fa-instagram:hover{
+  color:#E1306C;
+  transform: scale(1.1);
+}
+.fa-facebook:hover{
+  color:#1877F2;
+  transform: scale(1.1);
+}
+
 
 .coneect-me:hover {
   color: red; /* Change the color when hovering over the text */

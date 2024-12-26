@@ -1,153 +1,182 @@
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  color: white;
+  background: linear-gradient(
+    -45deg,
+    #742d05,
+    #2f4048,
+    #0e233a,
+    #650414
+  ); /* Diagonal gradient */
+  background-size: 400% 400%; /* Increase the size of the gradient for animation */
+  animation: gradientShift 10s ease infinite; /* Animation for sliding effect */
+}
+
+/* Keyframe for sliding background */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #16222A, #3A6073); /* Updated gradient */
-    color: white;
-    line-height: 1.6;
-    overflow-x: hidden;
-    height: 100%;
+  50% {
+    background-position: 100% 50%;
   }
-  
-  /* Navbar */
-  .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.9);
-    z-index: 999;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 10px 20px;
-    height: 70px;
+  100% {
+    background-position: 0% 50%;
   }
-  
-  .navbar .container {
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  height: 70px; /* Fixed height for navbar */
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+}
+
+.logo span {
+  color: red;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu ul li a {
+  text-decoration: none;
+  color: black;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-menu ul li a.active,
+.nav-menu ul li a:hover {
+  background-color: red;
+  color: white;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .nav-menu ul {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .nav-menu ul.active {
     display: flex;
-    justify-content: space-between;
+  }
+}
+
+/* Projects Section */
+.projects-section {
+  color: white;
+  animation: backgroundMove 5s linear infinite;
+  margin-top: 20px; /* Added margin to push content below navbar */
+}
+
+.projects-section h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.project-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 300px;
+  padding: 20px;
+  color: black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.project-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.project-card .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #0a5b98;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.project-card .btn:hover {
+  background-color: #0a3e62;
+}
+
+/* Responsive Design for Projects Section */
+@media (max-width: 768px) {
+  .project-container {
+    flex-direction: column;
     align-items: center;
   }
-  
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: black;
-  }
-  
-  .logo span {
-    color: red;
-  }
-  
-  .nav-menu ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-menu ul li a {
-    text-decoration: none;
-    color: black;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .nav-menu ul li a.active,
-  .nav-menu ul li a:hover {
-    background-color: red;
-    color: white;
-  }
-  
-  /* Projects Section */
-  .projects-section {
-    padding: 50px 0;
-    background: linear-gradient(45deg, #2c3e50, #3498db); /* Animated BG Color */
-    color: white;
-    animation: backgroundMove 5s linear infinite;
-    margin-top: 70px; /* Added margin to push content below navbar */
-  }
-  
-  @keyframes backgroundMove {
-    0% {
-      background: linear-gradient(45deg, #2c3e50, #3498db);
-    }
-    50% {
-      background: linear-gradient(45deg, #3498db, #2c3e50);
-    }
-    100% {
-      background: linear-gradient(45deg, #2c3e50, #3498db);
-    }
-  }
-  
-  .projects-section h1 {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 40px;
-  }
-  
-  .project-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-  }
-  
-  .project-card {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 300px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .project-card:hover {
-    transform: translateY(-10px);
-  }
-  
-  .project-image {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .project-card h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .project-card p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-  }
-  
-  .project-card .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 10px;
-    background-color: #0a5b98;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .project-card .btn:hover {
-    background-color: #0a3e62;
-  }
-  
-  /* Responsive Design for Projects Section */
-  @media (max-width: 768px) {
-    .project-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-  
+}
